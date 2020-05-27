@@ -1,4 +1,4 @@
-class GFG  
+class Static
 { 
     static int i = 1; 
   
