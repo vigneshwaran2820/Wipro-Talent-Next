@@ -1,22 +1,57 @@
-char[] v = { 'a', 'e', 'i', 'o', 'u' };
-        HashMap<Character, Integer> charCount = new HashMap<Character, Integer>();
-        char c;
-        int vCount = -1;
+int size= s.length();           int no=2;
+    char[] ch= new char[size];
+    for(int i=0;i<size;i++)
+    {
+        ch[i]=s.charAt(i);
+    }
+    boolean A = false;
+for (char a : ch) {
+    if (a == 'a') {
+        A = true;
+        break;
+    }
+}
+ boolean E = false;
+for (char e : ch) {
+    if (e == 'e') {
+        E = true;
+        break;
+    }
+}
+ boolean I = false;
+for (char i : ch) {
+    if (i == 'i') {
+        I = true;
+        break;
+    }
+}
+ boolean O = false;
+for (char o : ch) {
+    if (o == 'o') {
+        O = true;
+        break;
+    }
+}
+ boolean U = false;
+for (char u : ch) {
+    if (u == 'u') {
+        U = true;
+        break;
+    }
+}
+ for(int j=0;j<size-1;j++)
+    {
+        if(ch[j]>=ch[j+1])
+        no+=1;   
+    }
 
-        for (int i = 0; i < s.length(); i++) {
-            c = s.charAt(i);
-            int value = charCount.get(c) == null ? 0 : charCount.get(c) + 1;
-            if (value == 0) {
+if(A==E==I==O==U)
+{
+   return no;
 
-                if (c == v[vCount + 1]) {
-                    value = vCount >= 0 ? charCount.get(v[vCount]) + 1 : 1;
-                    vCount++;
-                }
-                
-                charCount.put(c, value);
+}
+else
+    return 0;
+    }
 
-            } else {
-                charCount.put(c, value);
-            }
-        }
-        return charCount.get('u').intValue();
+}
